@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="generatedText" type="java.lang.String"/>
+        <variable name="sentText" type="java.lang.String"/>
+        <variable name="queueText" type="java.lang.String"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/container">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textGenerated">
+
+        </TextView>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/receivedLocation"
+                android:text="@{generatedText}"
+                android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#080707">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sentText"
+                android:textColor="@color/colorAccent">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sentText">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/sentLocation"
+                android:text="@{sentText}"
+                android:textSize="20dp"
+                android:textColor="#ffffff"/>
+        </LinearLayout>
+
+
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/itensFila"
+                android:text="@{queueText}"
+                android:textSize="20dp" />
+
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mostra_mapa"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+
+    </LinearLayout>
+
+
+</layout>
